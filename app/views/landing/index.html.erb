@@ -1,0 +1,21 @@
+<%= form_tag '', method: :post do %>
+    <div>
+    <%= label_tag :from %>
+    <%= select_tag :from, options_for_select(["", "A", "B", "C"], "") %>
+    </div>
+    <div>
+    <%= label_tag :to %>
+    <%= select_tag :to, options_for_select(["", "A", "B", "C"], "") %>
+    </div>
+    <div>
+    <%= label_tag :date %>
+    <%= date_field_tag :date %>
+    </div>
+    <div>
+    <%= radio_button_tag :path, 'One' %>One way
+    <%= radio_button_tag :path, 'Two' %>Two way
+    </div>
+    <div>
+    <%= submit_tag 'Search' %>
+    </div>
+<% end %>
