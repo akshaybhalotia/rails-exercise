@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113120617) do
+ActiveRecord::Schema.define(version: 20160114132148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20160113120617) do
     t.time     "dep_time"
     t.time     "arr_time"
     t.decimal  "price",           precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "progress_bars", force: true do |t|
+    t.string   "message"
+    t.decimal  "percent"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

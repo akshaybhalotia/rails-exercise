@@ -1,0 +1,29 @@
+<h1>Listing progress_bars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Percent</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @progress_bars.each do |progress_bar| %>
+      <tr>
+        <td><%= progress_bar.message %></td>
+        <td><%= progress_bar.percent %></td>
+        <td><%= link_to 'Show', progress_bar %></td>
+        <td><%= link_to 'Edit', edit_progress_bar_path(progress_bar) %></td>
+        <td><%= link_to 'Destroy', progress_bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Progress bar', new_progress_bar_path %>

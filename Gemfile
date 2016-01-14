@@ -39,15 +39,18 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
+group :development, :test do
+  # Use debugger
+  gem 'debugger'
+  
+  gem 'rspec-rails'
 
-gem 'rspec-rails', group: [:development, :test]
-
-gem 'pry', group: [:development, :test]
+  gem 'pry-rails'
+end
 
 gem 'rails_12factor', group: :production

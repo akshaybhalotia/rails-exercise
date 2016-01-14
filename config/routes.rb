@@ -1,5 +1,11 @@
 RailsExercise::Application.routes.draw do
-  get "search_results/show", as: 'show'
+  #resources :progress_bars
+
+  post 'progress_bars/show/:id', as: 'progress_bar', to: 'progress_bars#show'
+  
+  post "search_results/show/:id", as: 'show', to: 'search_results#show'
+
+  post "search_results/searching", as: 'searching'
 
   get 'index', to: 'landing#index'
   # The priority is based upon order of creation: first created -> highest priority.
