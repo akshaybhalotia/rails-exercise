@@ -1,11 +1,10 @@
-<div id="bar" class="progress-bar" data-ping-time="1000">
-    
-    <div class="progress">
-        <div class="bar" style="width: 0%;"></div>
+<div class="container">
+  <div id="bar" class="progress" data-ping-time="1000">
+    <div class="progress-bar progress-bar-info" style="width: 0%;">
+      0%
     </div>
-    
-    <div class="message">Not Running...</div>
+  </div>
 </div>
 <script type="text/javascript">
- <%= (render partial:'searching.js') %>
+  <%= (render partial:'searching.js') %>
 </script>

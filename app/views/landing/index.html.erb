@@ -1,21 +1,31 @@
-<%= form_tag searching_path, method: :post do %>
-    <div>
+<%= form_tag searching_path, method: :post, class: 'form' do %>
+    <div class='form-group'>
     <%= label_tag :from %>
-    <%= select_tag :from, options_for_select(["", "A", "B", "C"], "") %>
+    <%= select_tag :from, options_for_select(["", "A", "B", "C"], ""), class: 'form-control' %>
     </div>
-    <div>
+    <div class='form-group'>
     <%= label_tag :to %>
-    <%= select_tag :to, options_for_select(["", "A", "B", "C"], "") %>
+    <%= select_tag :to, options_for_select(["", "A", "B", "C"], ""), class: 'form-control' %>
     </div>
-    <div>
+    <div class='form-group'>
     <%= label_tag :date %>
-    <%= date_field_tag :date %>
+    <div class="input-group date">
+      <input type="text" class="form-control" id="date" name="date"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
     </div>
-    <div>
-    <%= radio_button_tag :path, 1 %>One way
-    <%= radio_button_tag :path, 2 %>Two way
     </div>
-    <div>
-    <%= submit_tag 'Search' %>
+    <div class='form-group'>
+    <%= radio_button_tag :path, 1, class: 'form-control' %>One way
+    <%= radio_button_tag :path, 2, class: 'form-control' %>Two way
+    </div>
+    <div class='form-group'>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
     </div>
 <% end %>
+<script>
+      $('.input-group.date').datepicker({
+        startDate: "today",
+        clearBtn: true,
+        autoclose: true,
+        todayHighlight: true
+      });
+</script>
