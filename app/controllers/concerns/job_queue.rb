@@ -19,7 +19,7 @@ module JobQueue
         
         current_progress_bar.update_attributes!({
           message: 'Finished!',
-          percent: 0
+          percent: 100
         })
       end
       ActiveRecord::Base.connection.close

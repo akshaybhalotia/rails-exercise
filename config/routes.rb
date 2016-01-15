@@ -3,7 +3,7 @@ RailsExercise::Application.routes.draw do
 
   post 'progress_bars/show/:id', as: 'progress_bar', to: 'progress_bars#show'
   
-  post "search_results/show/:id", as: 'show', to: 'search_results#show'
+  post "search_results/show", as: 'show'
 
   post "search_results/searching", as: 'searching'
 
